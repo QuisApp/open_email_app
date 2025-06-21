@@ -25,6 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'com.homex.open_mail_app'
     compileSdkVersion 31
 
     sourceSets {
@@ -32,6 +33,13 @@ android {
     }
     defaultConfig {
         minSdkVersion 16
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
     lintOptions {
         disable 'InvalidPackage'

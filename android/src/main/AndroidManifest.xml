@@ -1,9 +1,19 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.homex.open_mail_app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.homex.open_mail_app">
     <queries>
+        <!-- For detecting email apps that handle mailto: URLs -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <data android:scheme="mailto" />
+        </intent>
+        <!-- For detecting email apps that handle email sending -->
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+        <!-- For detecting email apps that handle general email sending -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="message/rfc822" />
         </intent>
     </queries>
 </manifest>
